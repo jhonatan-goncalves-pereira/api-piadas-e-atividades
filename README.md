@@ -1,6 +1,6 @@
-# Avaliação Sprint 4 - Programa de Bolsas Compass.uol / AWS e IFCE
+# Avaliação Sprint 4 - Programa de Bolsas Compass UOL / AWS e IFCE
 
-Avaliação da quarta sprint do programa de bolsas Compass.uol para formação em machine learning para AWS.
+Avaliação da quarta sprint do programa de bolsas Compass UOL para formação em machine learning para AWS.
 
 ***
 
