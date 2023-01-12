@@ -4,34 +4,43 @@ Avaliação da quarta sprint do programa de bolsas Compass UOL para formação e
 
 ***
 
-## Execução (Código Fonte)
+## Equipe 4
 
-Com base nas atividades anteriores realizadas, crie uma aplicação nodeJs (express) que irá consumir duas APIs distintas e efetue o deploy na AWS Elastic Beanstalk.
+- Nicolas Ferreira
+- Josiana Silva
+- Samara Oliveira
+- Jhonatan Gonçalves
 
-**Especificações**:
+## Aplicação Web com deploy em Elastic Beanstalk:
 
-A aplicação terá basicamente duas rotas que irão retornar informações vindas de APIs externas formatadas de acordo com a especifícação a seguir.
+Esta é uma aplicação web que exibe três páginas: uma de boas-vindas e mais duas que utilizam informações vindas de duas APIs externas:
+- API Chuck Norris: Retorna em JSON uma piada aleatória relacionada ao personagem Chuck Norris, assim como seu id, data de criação e atualização, uma imagem e um link de referência. Disponível em https://api.chucknorris.io/jokes/random
+- API Atividades: Retorna em JSON uma atividade aleatória (exemplo: "Lave seu carro") assim como um id, tipo de atividade, participantes, e a acessibilidade dessa atividade. Disponível em: https://www.boredapi.com/api/activity
 
 ***
+
+## Tecnologias e módulos utilizados/necessários
+
+- JavaScript
+- Node JS e os módulos express, nodemon e request
+- AWS Elastic Beanstalk
+
+***
+
 ### Rota → Get /
 
-1. Nesta rota será efetuado um get na raiz do projeto.
-
-2. O retorno desta API deverá ter um texto simples.
-Exemplo:
+Através da url https://urlexemplo.com/ deverá ser exibida a seguinda mensagem para o usuário:
 
 ```json
- Este é o app do Grupo 10 😀
+ Este é o app do Grupo 4 🐊
 ```
 
-3. Status code para sucesso da requisição será `200`
+
 
 ***
 ### Rota → Get /api/piadas
 
-1. Nesta rota será efetuado um get em: [https://api.chucknorris.io/jokes/random](https://api.chucknorris.io/jokes/random)
-
-2. O retorno da API a ser desenvolvida deverá estar na seguinte formatação:
+Através da url https://urlexemplo.com/api/piadas deverá ser retornada ao usuário uma página contendo o retorno da API Chuck Norris em JSON seguindo o exemplo abaixo:
 
 ```json
 {
