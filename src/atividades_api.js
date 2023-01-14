@@ -1,20 +1,16 @@
+const { request } = require("express");
 const express = require("express");
 const router = express.Router();
 
 router.get("/atividades", (req, res) => {
-  const options = {
-    method: "GET",
-    mode: "cors",
-    cache: "default",
-  };
-  fetch(`https://www.boredapi.com/api/activity`, options)
-    .then((result) => {
-      result.json().then((data) => {
-        //console.log(data);
-        res.status(200).send(data);
-      });
-    })
-    .catch((err) => console.log("Erro:" + err, message));
+  request("https://www.boredapi.com/api/activity", (error, response, body) => {
+    if(error) {
+      console.log(error);
+    } else {
+      data = JSON.parse(body);
+      res.status(200).send(data);
+    }
+  });
 });
 
 module.exports = router;
