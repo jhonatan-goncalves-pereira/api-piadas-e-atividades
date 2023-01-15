@@ -17,7 +17,7 @@ function returnActivity(activity, type, participants, acessibility){
 };
 
 //console.log(returnActivity("a", "esc", 2, 0.2))
-module.exports = returnActivity
+module.exports = {returnActivity, createGUID}
 
 
 
