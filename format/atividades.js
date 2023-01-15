@@ -1,26 +1,23 @@
-
+function createGUID() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+        return v.toString(16);
+    });
+}
 
 function returnActivity(activity, type, participants, acessibility){
-    act = `{
-    'id:' '${function createGUID() {
-        const dt = new Date().getTime();
-        const guid = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'. replace(/[xy]/g, function(a) {
-            const b = (dt + Math.random()+16)%16 | 0;
-            dt = Math.floor(dt/16);
-            return (a == 'x' ? b :(b&0x3|0x8)).toString(16);
-        });
-        return guid;
-    }}',
-    'atividade': '${activity}',
-    'tipo': '${type}',
-    'participantes': '${participants}',
-    'acessibilidade': '${acessibility * 100}%'
+    const act = `{
+    "id": "${createGUID()}",
+    "atividade": "${activity}",
+    "tipo": "${type}",
+    "participantes": "${participants}",
+    "acessibilidade": "${acessibility * 100}%"
     }`
-
-    return act;
+    return JSON.parse(act);
 };
 
-module.exports = {returnActivity}
+//console.log(returnActivity("a", "esc", 2, 0.2))
+module.exports = returnActivity
 
 
 
